@@ -1,6 +1,5 @@
-import pdfjsLib from 'pdfjs-dist';
-
 const extractTextFromPDF = async (typedArray: any): Promise<String[]> => {
+  const pdfjsLib = require('pdfjs-dist');
   try {
     const pdf = await pdfjsLib.getDocument(typedArray).promise;
     const numPages = pdf.numPages;
@@ -9,7 +8,7 @@ const extractTextFromPDF = async (typedArray: any): Promise<String[]> => {
     for (let i = 1; i <= numPages; i++) {
       const page = await pdf.getPage(i);
       const textContent = await page.getTextContent();
-      textContent.items.forEach((s: String) => {
+      textContent.items.forEach((s: any) => {
         fullText.push(s.str);
       });
     }

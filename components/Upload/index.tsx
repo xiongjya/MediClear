@@ -85,9 +85,10 @@ const Upload = () => {
           handleChange={setUpload}
           maxSize={10}
           hoverTitle={' '}
-          children={<UploadDescription />}
           dropMessageStyle={{}}
-        />
+        >
+          <UploadDescription />
+        </FileUploader>
         {upload && <FileUploadState name={upload.name}/>}
         {upload && 
           <Button style={styles.generate} disabled={upload == null} onClick={() => handleFileChange(upload)}>
