@@ -1,25 +1,42 @@
-import type { Metadata } from 'next';
+import React from 'react';
 
-export const metadata: Metadata = {
-  title: 'Upload',
-  // description: 'NextJS + TailwindCSS minimalist starter kit',
-  // openGraph: {
-  //   title: 'NextJS + TailwindCSS minimalist starter kit',
-  //   description: 'The React Framework for the Web',
-  //   url: 'https://nextjs.org',
-  //   siteName: 'Next.js',
-  //   images: [
-  //     {
-  //       url: 'https://nextjs.org/og.png',
-  //       width: 800,
-  //       height: 600,
-  //     },
-  //   ],
-  //   locale: 'en-US',
-  //   type: 'website',
-  // },
-};
+import { Flex, Text, VStack } from '@chakra-ui/react';
+import TopBar from '../../components/TopBar/TopBar';
+import Upload from '../../components/Upload/Upload';
 
-export default function Index() {
-  return <h1 className='mb-12 text-6xl text-gray-900 dark:text-gray-100'>Upload</h1>;
+const navy = '#1E1E1E';
+
+const Description = () => {
+    return (
+        <VStack spacing='8px'>
+            <Text fontSize='42px' as='b' color={navy}>
+                MediClear
+            </Text>
+            <VStack spacing='0px'>
+                <Text fontSize='18px' color={navy}>
+                    Upload your health report or results and generate a simplified version with just a click.
+                </Text>
+                <Text fontSize='18px' color={navy}>
+                    We use Artificial Intelligence (AI) to ...
+                </Text>
+            </VStack>
+            <Text fontSize='18px' as='i' color={navy}>
+                .PNG, .JPG and .PDF files only.
+            </Text>
+        </VStack>
+    )
 }
+
+const UploadPage = () => {
+    return (
+        <Flex w='100%' h='100vh' flex={1} direction='column'>
+            <TopBar />
+            <VStack spacing='20px' paddingTop='35px'>
+                <Description />
+                <Upload />
+            </VStack>
+        </Flex>
+    );
+}
+
+export default UploadPage;
