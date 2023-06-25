@@ -26,6 +26,9 @@ const handleFileChange = async (file: any) => {
   const fileReader = new FileReader();
 
   fileReader.onload = async () => {
+    if (fileReader.result == null || typeof fileReader.result == "string") {
+      return;
+    }
     const typedArray = new Uint8Array(fileReader.result);
     const text: String[] = await extractTextFromPDF(typedArray);
     const result: Results[] = parsePdfText(text);
