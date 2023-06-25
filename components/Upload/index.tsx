@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react';
 import {
   Button,
@@ -79,9 +81,9 @@ const Upload = () => {
 
 const styles = {
   upload: {
-      color: '#282C34',
-      height: '50px',
-      width: '50px'
+    color: '#282C34',
+    height: '50px',
+    width: '50px'
   },
   file: {
     color: '#282C34',
