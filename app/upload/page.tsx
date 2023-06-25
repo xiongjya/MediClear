@@ -4,8 +4,8 @@ import React from 'react';
 
 import type { Metadata } from 'next';
 import { Flex, Text, VStack } from '@chakra-ui/react';
-import TopBar from '../../components/TopBar';
-import Upload from '../../components/Upload';
+import TopBar from '@/components/TopBar';
+import Upload from '@/components/Upload';
 
 const navy = '#1E1E1E';
 
