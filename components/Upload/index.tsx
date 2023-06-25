@@ -16,6 +16,7 @@ import { BsFileEarmarkImageFill, BsFileEarmarkPdfFill } from 'react-icons/bs';
 import { LuUploadCloud } from 'react-icons/lu';
 import extractTextFromPDF from '@/utils/ExtractTextFromPdf';
 import parsePdfText from '@/utils/ParsePdfText';
+import Results from '@/utils/types/Results';
 
 const black = '#000000';
 const navy = '#1E1E1E'; 
@@ -27,7 +28,8 @@ const handleFileChange = async (file: any) => {
   fileReader.onload = async () => {
     const typedArray = new Uint8Array(fileReader.result);
     const text: String[] = await extractTextFromPDF(typedArray);
-    parsePdfText(text);
+    const result: Results[] = parsePdfText(text);
+    console.log(result);
   };
 
   fileReader.readAsArrayBuffer(file);

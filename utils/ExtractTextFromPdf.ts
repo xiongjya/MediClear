@@ -10,7 +10,7 @@ const extractTextFromPDF = async (typedArray: any): Promise<String[]> => {
       const page = await pdf.getPage(i);
       const textContent = await page.getTextContent();
       textContent.items.forEach((s: String) => {
-        fullText.push(s);
+        fullText.push(s.str);
       });
     }
 
