@@ -22,6 +22,10 @@
   color: var(--primary-subtle);
 }
 
+.primary-bg {
+  background-color: var(--primary-background);
+}
+
 .navbar-bg {
   background-color: var(--navbar-background);
 }
