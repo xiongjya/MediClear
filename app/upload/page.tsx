@@ -9,7 +9,6 @@ import Upload from '@/components/Upload';
 
 const navy = '#1E1E1E';
 
-
 export const metadata: Metadata = {
   title: 'Upload',
   description: 'Upload your health report for analysis',
