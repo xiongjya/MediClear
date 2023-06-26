@@ -1,4 +1,7 @@
+'use client'
+
 import './globals.css'
+import { ChakraProvider } from "@chakra-ui/react";
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <ChakraProvider>
+          {children}
+        </ChakraProvider>
       </body>
     </html>
   )

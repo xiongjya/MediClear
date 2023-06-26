@@ -14,10 +14,29 @@ import { FileUploader } from "react-drag-drop-files";
 import { AiFillDelete } from 'react-icons/ai';
 import { BsFileEarmarkImageFill, BsFileEarmarkPdfFill } from 'react-icons/bs';
 import { LuUploadCloud } from 'react-icons/lu';
+import extractTextFromPDF from '@/utils/ExtractTextFromPdf';
+import parsePdfText from '@/utils/ParsePdfText';
+import Results from '@/utils/types/Results';
 
 const black = '#000000';
 const navy = '#1E1E1E'; 
 const lightBlue = '#CAD4E6';
+
+const handleFileChange = async (file: any) => {
+  const fileReader = new FileReader();
+
+  fileReader.onload = async () => {
+    if (fileReader.result == null || typeof fileReader.result == "string") {
+      return;
+    }
+    const typedArray = new Uint8Array(fileReader.result);
+    const text: String[] = await extractTextFromPDF(typedArray);
+    const result: Results[] = parsePdfText(text);
+    console.log(result);
+  };
+
+  fileReader.readAsArrayBuffer(file);
+};
 
 const UploadDescription = () => {
   return (
@@ -66,12 +85,13 @@ const Upload = () => {
           handleChange={setUpload}
           maxSize={10}
           hoverTitle={' '}
-          children={<UploadDescription />}
           dropMessageStyle={{}}
-        />
+        >
+          <UploadDescription />
+        </FileUploader>
         {upload && <FileUploadState name={upload.name}/>}
         {upload && 
-          <Button style={styles.generate}>
+          <Button style={styles.generate} disabled={upload == null} onClick={() => handleFileChange(upload)}>
             Generate Simplified Report
           </Button>}
       </VStack>
