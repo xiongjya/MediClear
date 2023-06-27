@@ -1,6 +1,6 @@
 'use client';
 
-import { Section, Summary } from '@/components/Report';
+import { Cards, Summary } from '@/components/Report';
 import TopBar from '@/components/TopBar';
 import { Flex, Text, VStack } from '@chakra-ui/react';
 import type { Metadata } from 'next';
@@ -41,7 +41,7 @@ const Report = () => {
           Simplified Health Report
         </Text>
         <Summary />
-        <Section />
+        <Cards />
       </VStack>
     </Flex>
   );

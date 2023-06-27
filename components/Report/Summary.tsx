@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const Summary = () => {
   return (
