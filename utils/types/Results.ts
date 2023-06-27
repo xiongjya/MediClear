@@ -1,6 +1,8 @@
+import ResultEnum from '../enums/ResultEnum';
+
 type Results = {
-  category: String,
-  value: number
-}
+  category: ResultEnum;
+  value: number;
+};
 
 export default Results;
