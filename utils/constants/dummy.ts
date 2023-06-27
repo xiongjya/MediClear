@@ -20,7 +20,7 @@ const dummy: ResultInfo[] = [
       category: ResultEnum.NORMAL,
       value: 1.0
     },
-    ranges: [2.2, 4.5]
+    ranges: [2.2, 4.5],
     resultTab:
       'Triglycerides are a type of fat in our blood, they serve as a source of energy.\nHaving some triglycerides is necessary for body to function. But too much of it increases the risk of heart diseases and other health problems.',
     tipsTab:
