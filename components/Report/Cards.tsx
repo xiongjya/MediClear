@@ -24,7 +24,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = props => {
-  const { title, resultTab, tipsTab } = props.data;
+  const { title, resultTab, tipsTab, result } = props.data;
 
   return (
     <Accordion allowToggle boxShadow={'xl'} borderRadius={'4'}>
@@ -50,9 +50,11 @@ const Card: React.FC<CardProps> = props => {
           <HStack divider={<StackDivider borderColor='gray.200' />} spacing={4}>
             <Box w='100%'>{resultTab}</Box>
             <Box w='100%' justifyContent={'center'} alignItems={'center'}>
-              <RangeSection />
+              <RangeSection title={title} result={result} />
             </Box>
-            <Box w='100%'>{tipsTab}</Box>
+            <Box w='100%' whiteSpace={'pre-line'}>
+              {tipsTab}
+            </Box>
           </HStack>
         </AccordionPanel>
       </AccordionItem>
