@@ -8,8 +8,7 @@ const Summary = () => {
         {'Summary: {Lipid Panel}'}
       </Text>
       <Text fontSize={'16'}>
-        Panel of blood tests used to screen for{' '}
-        <Text as='b'>cardiovascular diseases</Text>.
+        Panel of blood tests used to screen for <b>cardiovascular diseases</b>.
       </Text>
     </Box>
   );

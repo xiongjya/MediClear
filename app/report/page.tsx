@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 const Report = () => {
   return (
-    <Flex w='100%' h='100vh' flex={1} direction='column'>
+    <Flex w='100%' flex={1} direction='column'>
       <TopBar />
       <VStack
         spacing='32px'

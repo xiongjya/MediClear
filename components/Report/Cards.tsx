@@ -29,23 +29,21 @@ const Card: React.FC<CardProps> = props => {
   return (
     <Accordion allowToggle boxShadow={'xl'} borderRadius={'4'}>
       <AccordionItem>
-        <h1>
-          <AccordionButton
-            bg={header.moderate}
+        <AccordionButton
+          bg={header.moderate}
+          w='100%'
+          _hover={{ backgroundColor: '#FFCDA2' }}
+        >
+          <Box
+            textAlign='center'
+            fontWeight='extrabold'
             w='100%'
-            _hover={{ backgroundColor: '#FFCDA2' }}
+            fontSize='24px'
           >
-            <Box
-              textAlign='center'
-              fontWeight='extrabold'
-              w='100%'
-              fontSize='24px'
-            >
-              {title}
-            </Box>
-            <AccordionIcon left={0} />
-          </AccordionButton>
-        </h1>
+            {title}
+          </Box>
+          <AccordionIcon left={0} />
+        </AccordionButton>
         <AccordionPanel pt={4} pb={4}>
           <HStack divider={<StackDivider borderColor='gray.200' />} spacing={4}>
             <Box w='100%'>{resultTab}</Box>
