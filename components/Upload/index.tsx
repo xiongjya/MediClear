@@ -10,17 +10,16 @@ import {
   VStack
 } from '@chakra-ui/react';
 import { FileUploader } from "react-drag-drop-files";
-
 import { AiFillDelete } from 'react-icons/ai';
-import { BsFileEarmarkImageFill, BsFileEarmarkPdfFill } from 'react-icons/bs';
+import { BsFileEarmarkImage, BsFileEarmarkPdf } from 'react-icons/bs';
 import { LuUploadCloud } from 'react-icons/lu';
+
 import extractTextFromPDF from '@/utils/ExtractTextFromPdf';
 import parsePdfText from '@/utils/ParsePdfText';
 import Results from '@/utils/types/Results';
 
 const black = '#000000';
 const navy = '#1E1E1E'; 
-const lightBlue = '#CAD4E6';
 
 const handleFileChange = async (file: any) => {
   const fileReader = new FileReader();
@@ -40,13 +39,13 @@ const handleFileChange = async (file: any) => {
 
 const UploadDescription = () => {
   return (
-    <VStack spacing='5px' w='800px' borderStyle='dashed' borderColor={navy} borderRadius='20px' borderWidth='4px' background={lightBlue} padding='30px'>
+    <VStack spacing='5px' w='800px' borderStyle='dashed' borderColor={navy} borderRadius='20px' borderWidth='4px' className="primary-bg" padding='30px'>
       <LuUploadCloud style={styles.upload} />
       <VStack spacing='0px'>
         <Text fontSize='18px' as='b' color={black}>Drag and drop files here</Text>
         <Text fontSize='18px' as='i' color={black}>or</Text>  
       </VStack>
-      <Button>Browse files</Button>
+      <Button variant='outline' colorScheme='purple'>Browse files</Button>
     </VStack>
   );
 }
@@ -59,11 +58,11 @@ const Upload = () => {
     const file_type = props.name.split(".").pop()
   
     return (
-      <Flex w='800px' h='60px' borderRadius='20px' background={lightBlue} padding='15px'>
+      <Flex w='800px' h='60px' borderRadius='20px' className="primary-bg" padding='15px'>
         <HStack marginLeft='5px' spacing='15px'>
           {file_type === "pdf"
-            ? <BsFileEarmarkPdfFill style={styles.file} />
-            : <BsFileEarmarkImageFill style={styles.file} /> }
+            ? <BsFileEarmarkPdf style={styles.file} />
+            : <BsFileEarmarkImage style={styles.file} /> }
           <Text w='660px' fontSize='18px' noOfLines={1} textAlign={'left'} color={black}>{props.name}</Text>
           <IconButton 
             aria-label='Delete upload'
@@ -124,5 +123,4 @@ const styles = {
   }
 }
 
-// from https://gist.github.com/Sqvall/23043a12a7fabf0f055198cb6ec39531
 export default Upload

@@ -21,12 +21,4 @@ const TopBar = () => {
   );
 }
 
-const styles = {
-  icon: {
-    color: '#282C34',
-    height: '45px',
-    width: '45px'
-  }
-}
-
 export default TopBar;
