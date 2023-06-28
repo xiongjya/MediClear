@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Result',
+// export const metadata: Metadata = {
+//   title: 'Result',
   // description: 'NextJS + TailwindCSS minimalist starter kit',
   // openGraph: {
   //   title: 'NextJS + TailwindCSS minimalist starter kit',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   //   locale: 'en-US',
   //   type: 'website',
   // },
-};
+// };
 
 export default function Index() {
   return <h1 className='mb-12 text-6xl text-gray-900 dark:text-gray-100'>Upload</h1>;

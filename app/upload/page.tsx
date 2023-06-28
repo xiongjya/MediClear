@@ -2,29 +2,29 @@
 
 import React from 'react';
 
-import type { Metadata } from 'next';
+// import type { Metadata } from 'next';
 import { Flex, Text, VStack } from '@chakra-ui/react';
 import Upload from '@/components/Upload';
 
-export const metadata: Metadata = {
-  title: 'Upload',
-  description: 'Upload your health report for analysis',
-  openGraph: {
-  title: 'Upload health report',
-  description: 'Upload your health report for analysis',
-  url: 'https://mediclear.vercel.app',
-  siteName: 'MediClear',
-  images: [
-    {
-    url: 'https://mediclear.vercel.app',
-    width: 800,
-    height: 600,
-    },
-  ],
-  locale: 'en-US',
-  type: 'website',
-  },
-};
+// export const metadata: Metadata = {
+//   title: 'Upload',
+//   description: 'Upload your health report for analysis',
+//   openGraph: {
+//   title: 'Upload health report',
+//   description: 'Upload your health report for analysis',
+//   url: 'https://mediclear.vercel.app',
+//   siteName: 'MediClear',
+//   images: [
+//     {
+//     url: 'https://mediclear.vercel.app',
+//     width: 800,
+//     height: 600,
+//     },
+//   ],
+//   locale: 'en-US',
+//   type: 'website',
+//   },
+// };
 
 const Description = () => {
   return (
