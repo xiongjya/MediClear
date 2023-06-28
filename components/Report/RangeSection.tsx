@@ -14,7 +14,7 @@ const RangeSection: React.FC<RangeSectionProps> = props => {
   return (
     <VStack spacing={6}>
       <Text>
-        {`Results for ${title} (${value} unit1/unit2) is `}
+        {`Results for ${title} (${value} DYNAMIC/DYNAMIC) is `}
         <Text as='b'>
           {category
             .split('_')
