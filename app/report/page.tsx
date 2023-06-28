@@ -31,12 +31,7 @@ const Report = () => {
   return (
     <Flex w='100%' flex={1} direction='column'>
       <TopBar />
-      <VStack
-        spacing='32px'
-        paddingTop='35px'
-        padding='35px 50px'
-        align='stretch'
-      >
+      <VStack spacing='32px' padding='35px 50px' align='stretch'>
         <Text fontSize='56px' as='b' fontWeight='black' color={navy}>
           Simplified Health Report
         </Text>
