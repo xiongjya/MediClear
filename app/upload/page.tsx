@@ -52,8 +52,7 @@ const Description = () => {
 
 const UploadPage = () => {
   return (
-    <Flex w='100%' h='100vh' flex={1} direction='column'>
-      <TopBar />
+    <Flex w='100%' h='80vh' flex={1} direction='column'>
       <VStack spacing='20px' paddingTop='35px'>
         <Description />
         <Upload />
