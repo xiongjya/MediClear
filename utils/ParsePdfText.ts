@@ -10,6 +10,7 @@ import Descriptions from "@/data/Descriptions";
 import CategoryTips from "./types/CategoryTips";
 import CategoryTipsMatching from "./types/CategoryTipsMatching";
 import AllCategoryTips from "@/data/AllCategoryTips";
+import { Result } from "postcss";
 
 
 const getRange = (category: CategoryEnum): CategoryRanges => {
@@ -23,7 +24,8 @@ const getCategoryDescription = (category: CategoryEnum): CategoryDescription => 
 }
 
 const getResultEnum = (value: number, result: number[]): ResultEnum => {
-  return ResultEnum.NORMAL;
+  // TODO - MY LAPTOP DIEDED :(
+  return ResultEnum.HIGH;
 }
 
 const getCategoryTips = (category: CategoryEnum, result: ResultEnum) => {
