@@ -22,9 +22,8 @@ import { useRouter } from 'next/navigation';
 const black = '#000000';
 const navy = '#1E1E1E'; 
 
-const handleFileChange = async (file: any) => {
+const handleFileChange = async (file: any, router: any) => {
   const fileReader = new FileReader();
-  const router = useRouter();
 
   fileReader.onload = async () => {
     if (fileReader.result == null || typeof fileReader.result == "string") {
@@ -57,6 +56,7 @@ const UploadDescription = () => {
 const Upload = () => {
   const fileTypes = ["PNG", "JPG", "PDF"];
   const [upload, setUpload] = useState<any>();
+  const router = useRouter();
 
   const FileUploadState = ( props: any ) => {
     const file_type = props.name.split(".").pop()
@@ -94,7 +94,7 @@ const Upload = () => {
         </FileUploader>
         {upload && <FileUploadState name={upload.name}/>}
         {upload && 
-          <Button style={styles.generate} disabled={upload == null} onClick={() => handleFileChange(upload)}>
+          <Button style={styles.generate} disabled={upload == null} onClick={() => handleFileChange(upload, router)}>
             Generate Simplified Report
           </Button>}
       </VStack>
