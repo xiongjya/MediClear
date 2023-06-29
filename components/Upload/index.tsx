@@ -17,12 +17,14 @@ import { LuUploadCloud } from 'react-icons/lu';
 import extractTextFromPDF from '@/utils/ExtractTextFromPdf';
 import parsePdfText from '@/utils/ParsePdfText';
 import ResultInfo from '@/utils/types/ResultInfo';
+import { useRouter } from 'next/navigation';
 
 const black = '#000000';
 const navy = '#1E1E1E'; 
 
 const handleFileChange = async (file: any) => {
   const fileReader = new FileReader();
+  const router = useRouter();
 
   fileReader.onload = async () => {
     if (fileReader.result == null || typeof fileReader.result == "string") {
@@ -32,6 +34,8 @@ const handleFileChange = async (file: any) => {
     const text: String[] = await extractTextFromPDF(typedArray);
     const result: ResultInfo[] = parsePdfText(text);
     console.log(result);
+    localStorage.setItem("result", JSON.stringify(result) )
+    router.push("/upload");
   };
 
   fileReader.readAsArrayBuffer(file);
