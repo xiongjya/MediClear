@@ -23,9 +23,14 @@ const getCategoryDescription = (category: CategoryEnum): CategoryDescription => 
   return descriptions[0];
 }
 
-const getResultEnum = (value: number, result: number[]): ResultEnum => {
-  // TODO - MY LAPTOP DIEDED :(
-  return ResultEnum.HIGH;
+const getResultEnum = (value: number, ranges: CategoryRanges): ResultEnum => {
+  if (value <= ranges.ranges[0]) {
+    return ranges.resultRange[1];
+  } else if (ranges.ranges.length == 1 || value <= ranges.ranges[1] ) {
+    return ranges.resultRange[2];
+  } else {
+    return ranges.resultRange[3];
+  }
 }
 
 const getCategoryTips = (category: CategoryEnum, result: ResultEnum) => {
@@ -36,8 +41,8 @@ const getCategoryTips = (category: CategoryEnum, result: ResultEnum) => {
 
 const removeExtraWords = (category: String) => {
   category = category.split(",")[0];
-  category = category.split(":")[0];
-  return category;
+  category = category.split("(")[0];
+  return category.trim();
 }
 
 const parsePdfText = (pdfText: String[]): ResultInfo[] => {
@@ -47,11 +52,12 @@ const parsePdfText = (pdfText: String[]): ResultInfo[] => {
     if (pdfText[i].toLowerCase().startsWith("result")) {
       try {
         const title: string = removeExtraWords(pdfText[i - 1]).toString();
+        console.log(title)
         const category: CategoryEnum = CategoryMapping[title] || CategoryEnum.UNKNOWN;
         const ranges: CategoryRanges = getRange(category);
 
         const value: number = Number(pdfText[i + 1].split(" ")[0]);
-        const resultEnum: ResultEnum = getResultEnum(value, ranges.ranges);
+        const resultEnum: ResultEnum = getResultEnum(value, ranges);
         
         const result: Results = {
           category: category,
