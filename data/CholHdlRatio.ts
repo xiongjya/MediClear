@@ -2,7 +2,7 @@ import TipDescription from "@/utils/constants/TipDescription";
 import ResultEnum from "@/utils/enums/ResultEnum";
 import CategoryTips from "@/utils/types/CategoryTips";
 
-const LdlCholesterol: CategoryTips[] = [
+const CholHdlRatio: CategoryTips[] = [
   {
     result: ResultEnum.NORMAL,
     tips: [
@@ -23,4 +23,4 @@ const LdlCholesterol: CategoryTips[] = [
   }
 ]
 
-export default LdlCholesterol;
+export default CholHdlRatio;

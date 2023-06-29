@@ -1,7 +1,7 @@
 import CategoryEnum from "@/utils/enums/CategoryEnum";
 import CategoryDescription from "@/utils/types/CategoryDescription";
 
-const Description: CategoryDescription[] = [
+const Descriptions: CategoryDescription[] = [
   {
     category: CategoryEnum.TOTAL_CHOLESTEROL,
     description: "Total amount of cholesterol in your blood includes the good (HDL cholesterol) and bad (LDL cholesterol). \n Keeping the total cholesterol within a healthy range is important. If it is too high, it could mean too much bad cholesterol. If it is too low, it could mean too little good cholesterol."
@@ -24,4 +24,4 @@ const Description: CategoryDescription[] = [
   }
 ]
 
-export default Description;
+export default Descriptions;

@@ -1,7 +1,9 @@
+import CategoryEnum from '../enums/CategoryEnum';
 import ResultEnum from '../enums/ResultEnum';
 
 type Results = {
-  category: ResultEnum;
+  category: CategoryEnum;
+  result: ResultEnum;
   value: number;
 };
 

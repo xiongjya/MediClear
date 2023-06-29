@@ -16,7 +16,7 @@ import { LuUploadCloud } from 'react-icons/lu';
 
 import extractTextFromPDF from '@/utils/ExtractTextFromPdf';
 import parsePdfText from '@/utils/ParsePdfText';
-import Results from '@/utils/types/Results';
+import ResultInfo from '@/utils/types/ResultInfo';
 
 const black = '#000000';
 const navy = '#1E1E1E'; 
@@ -30,7 +30,7 @@ const handleFileChange = async (file: any) => {
     }
     const typedArray = new Uint8Array(fileReader.result);
     const text: String[] = await extractTextFromPDF(typedArray);
-    const result: Results[] = parsePdfText(text);
+    const result: ResultInfo[] = parsePdfText(text);
     console.log(result);
   };
 
