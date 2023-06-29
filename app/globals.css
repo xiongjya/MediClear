@@ -6,8 +6,7 @@
   --primary: #050A8B;
   --primary-dark: #13173A;
   --primary-subtle: #718194;
-  --primary-background: #CAD4E6;
-  --navbar-background: #d9d9d9;
+  --primary-background: #EAEBFF;
 }
 
 .primary {
@@ -26,6 +25,7 @@
   background-color: var(--primary-background);
 }
 
-.navbar-bg {
-  background-color: var(--navbar-background);
+.landing-container {
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
