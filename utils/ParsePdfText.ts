@@ -52,7 +52,6 @@ const parsePdfText = (pdfText: String[]): ResultInfo[] => {
     if (pdfText[i].toLowerCase().startsWith("result")) {
       try {
         const title: string = removeExtraWords(pdfText[i - 1]).toString();
-        console.log(title)
         const category: CategoryEnum = CategoryMapping[title] || CategoryEnum.UNKNOWN;
         const ranges: CategoryRanges = getRange(category);
 
