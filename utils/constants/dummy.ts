@@ -1,7 +1,6 @@
 import ResultEnum from '../enums/ResultEnum';
-import ResultInfo from '../types/ResultInfo';
 
-const dummy: ResultInfo[] = [
+const dummy: any[] = [
   {
     title: 'Total Cholesterol',
     result: {
