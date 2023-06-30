@@ -35,16 +35,15 @@ const Report = () => {
     const storeResults = JSON.parse(localStorage.getItem('result') || '');
 
     if (Object.keys(storeResults).length === 0) {
-      alert("No result data found from localStorage!")
+      alert('No result data found from localStorage!');
       return;
     }
 
     setResults(storeResults);
-  }, [])
+  }, []);
 
   return (
     <Flex w='100%' flex={1} direction='column'>
-      <TopBar />
       <VStack spacing='32px' padding='35px 50px' align='stretch'>
         <Text fontSize='56px' as='b' fontWeight='black' color={navy}>
           Simplified Health Report
