@@ -81,6 +81,8 @@ const Card: React.FC<CardProps> = props => {
                 title={result.category}
                 result={result.result}
                 value={result.value}
+                ranges={ranges.ranges}
+                rangesColour={ranges.resultRange}
               />
             </Box>
             <VStack

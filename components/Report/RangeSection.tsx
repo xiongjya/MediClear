@@ -1,14 +1,17 @@
 import { Text, VStack } from '@chakra-ui/react';
 import RangeBar from './RangeBar';
+import ResultEnum from '@/utils/enums/ResultEnum';
 
 interface RangeSectionProps {
   title: string;
   result: string;
   value: number;
+  ranges: number[];
+  rangesColour: ResultEnum[];
 }
 
 const RangeSection: React.FC<RangeSectionProps> = props => {
-  const { title, result, value } = props;
+  const { title, result, value, ranges, rangesColour } = props;
 
   const unit = title.match(/ratio/i) ? '' : ' mmol/L';
 
@@ -23,7 +26,7 @@ const RangeSection: React.FC<RangeSectionProps> = props => {
             .join(' ')}
         </Text>
       </Text>
-      <RangeBar />
+      <RangeBar actual={value} ranges={ranges} rangesColour={rangesColour} />
     </VStack>
   );
 };
