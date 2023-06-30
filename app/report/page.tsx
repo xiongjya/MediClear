@@ -3,6 +3,7 @@
 import { Cards, Summary } from '@/components/Report';
 import TopBar from '@/components/TopBar';
 import { Flex, Text, VStack } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 // import type { Metadata } from 'next';
 
 const navy = '#1E1E1E';
@@ -28,6 +29,19 @@ const navy = '#1E1E1E';
 // };
 
 const Report = () => {
+  const [results, setResults] = useState({});
+
+  useEffect(() => {
+    const storeResults = JSON.parse(localStorage.getItem('result') || '');
+
+    if (Object.keys(storeResults).length === 0) {
+      alert("No result data found from localStorage!")
+      return;
+    }
+
+    setResults(storeResults);
+  }, [])
+
   return (
     <Flex w='100%' flex={1} direction='column'>
       <TopBar />
