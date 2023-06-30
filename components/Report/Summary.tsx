@@ -5,10 +5,10 @@ const Summary = () => {
   return (
     <Box bg='#EAEBFF' padding='4' borderRadius={'4'}>
       <Text as='b' fontSize={'24'}>
-        {'Summary: {DYNAMIC}'}
+        {'Summary: Lipid Panel'}
       </Text>
       <Text fontSize={'16'}>
-        Panel of DYNAMIC(?) used to screen for <b>DYNAMIC</b>.
+        Panel of blood tests used to screen for <b>cardiovascular diseases</b>.
       </Text>
     </Box>
   );
