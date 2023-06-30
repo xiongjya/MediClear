@@ -34,7 +34,7 @@ const handleFileChange = async (file: any, router: any) => {
     const result: ResultInfo[] = parsePdfText(text);
     console.log(result);
     localStorage.setItem("result", JSON.stringify(result) )
-    router.push("/upload");
+    router.push("/report");
   };
 
   fileReader.readAsArrayBuffer(file);
