@@ -106,7 +106,7 @@ const Cards = () => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    let storeResults = "";
+    let storeResults  = [];
     try {
       storeResults = JSON.parse(atob(localStorage.getItem('result') || ""));
     } catch (error) {
@@ -128,6 +128,6 @@ const Cards = () => {
       ))}
     </Fragment>
   );
-};
+}
 
 export default Cards;

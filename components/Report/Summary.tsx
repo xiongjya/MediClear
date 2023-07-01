@@ -15,7 +15,7 @@ const Summary = () => {
     if (!summary) {
       currSummary = {
         type: "Lipid Panel",
-        description: "Panel of blood tests used to screen for <b>cardiovascular diseases</b>."
+        description: "Panel of blood tests used to screen for cardiovascular diseases."
       }
     }
 
@@ -25,7 +25,7 @@ const Summary = () => {
   return (
     <Box bg='#EAEBFF' padding='4' borderRadius={'4'}>
       <Text as='b' fontSize={'24'}>
-        'Summary: { summary?.type || ""}
+        Summary: { summary?.type || ""}
       </Text>
       <Text fontSize={'16'}>
         { summary?.description || "" }
