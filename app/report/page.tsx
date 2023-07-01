@@ -1,8 +1,9 @@
 'use client';
 
 import { Cards, Summary } from '@/components/Report';
-import { Flex, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, Text, VStack } from '@chakra-ui/react';
 // import type { Metadata } from 'next';
+import Image from 'next/image';
 
 const navy = '#1E1E1E';
 
@@ -36,6 +37,16 @@ const Report = () => {
         <Summary />
         <Cards />
       </VStack>
+      <Box>
+        <Image
+          src='/HealthScreeningReport.png'
+          alt='Actual Report'
+          width={0}
+          height={0}
+          sizes='100vw'
+          style={{ width: '100%', height: 'auto' }}
+        />
+      </Box>
     </Flex>
   );
 };
