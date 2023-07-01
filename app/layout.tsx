@@ -33,7 +33,7 @@ export default function RootLayout({
             className="primary-bg"
           >
             <Box textAlign="center">
-              <Text>Mobile site is not available. Please try again on a device with a larger screen.</Text>
+              <Text fontSize="3xl">Mobile site is not available. Please try again on a device with a larger screen.</Text>
             </Box>
           </Box>
           </ChakraProvider>
