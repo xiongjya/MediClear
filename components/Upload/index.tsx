@@ -17,7 +17,9 @@ import { LuUploadCloud } from 'react-icons/lu';
 import extractTextFromPDF from '@/utils/ExtractTextFromPdf';
 import parsePdfText from '@/utils/ParsePdfText';
 import ResultInfo from '@/utils/types/ResultInfo';
+import TestReportDescription from '@/data/TestReportDescription';
 import { useRouter } from 'next/navigation';
+import ReportHeader from '@/utils/types/ReportHeader';
 
 const black = '#000000';
 const navy = '#1E1E1E'; 
@@ -32,8 +34,14 @@ const handleFileChange = async (file: any, router: any) => {
     const typedArray = new Uint8Array(fileReader.result);
     const text: String[] = await extractTextFromPDF(typedArray);
     const result: ResultInfo[] = parsePdfText(text);
-    console.log(result);
-    localStorage.setItem("result", JSON.stringify(result) )
+    localStorage.setItem("result", btoa(JSON.stringify(result)) )
+    const header: string = text[2].toString();
+    const reportHeader: ReportHeader = {  
+      type: text[2],
+      description: TestReportDescription[header]
+    }
+    localStorage.setItem("summary", btoa(JSON.stringify(reportHeader)))
+
     router.push("/report");
   };
 
